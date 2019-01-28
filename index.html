@@ -1,0 +1,60 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+        function getUrlVars()
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+        vars = getUrlVars()
+
+        if (vars.region) {
+            region = vars.region
+        } else {
+            region = "GB"
+        }
+
+        if (vars) {
+                $("input[name=productcode]").val(vars.code);
+                $("input[name=option_code]").val(vars.size);
+                $('#form').attr('action', 'http://hot-t.co.kr/front/confirm_basket_proc.php');
+                $('#form').submit();
+        }
+})
+</script>
+</head>
+<body>
+
+<center><h1>Hot T KR Carting...for CookSSOM</h1></center>
+
+<form name="form" id="form" action="http://hot-t.co.kr/front/confirm_basket_proc.php" method="post">
+		<input hidden name="productcode" value="002002001000007125">
+		<input hidden name="option_code" value="250">
+		<input hidden name="quantity" value="1">
+        <input hidden name="option_type" value="0">
+        <input hidden name="mode" value="order">
+		<input hidden name="delivery_type" value="0">
+        <input hidden name="buylimit" value="y">
+
+		<!--<input  name="_multi_ea[]" value="1">
+		<input  name="multi_ea[]" value="1">
+		<input  name="multi_ea[0][]" value="235">
+		<input  name="multi_ea[0][]" value="">-->
+		
+ <input type="submit" value="Add To Cart">
+</form>
+
+
+</body>
+</html>
