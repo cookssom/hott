@@ -21,9 +21,10 @@ $(document).ready(function() {
 	vars = getUrlVars()
 	console.log(vars.copy)
 	*/
-	navigator.clipboard.writeText(vars.copy).then(() => {
+	targeturl = window.location.href.split("?copy=")[1]
+	navigator.clipboard.writeText(targeturl).then(() => {
 	  /* Resolved - text copied to clipboard */
-		window.location.replace(vars.copy);
+		window.location.replace(targeturl);
 	},() => {
 	  /* Rejected - clipboard failed */
 	});
