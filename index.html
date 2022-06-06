@@ -16,7 +16,7 @@ $(document).ready(function() {
             }
             return vars;
         }
-	
+	vars = getUrlVars()
 	navigator.clipboard.writeText(vars.copy).then(() => {
 	  /* Resolved - text copied to clipboard */
 		window.location.replace(vars.copy);
