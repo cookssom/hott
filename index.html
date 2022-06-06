@@ -4,6 +4,8 @@
 <script>
 
 $(document).ready(function() {
+	console.log(window.location.href.split("?copy=")[1])
+	/*
         function getUrlVars()
         {
             var vars = [], hash;
@@ -18,6 +20,7 @@ $(document).ready(function() {
         }
 	vars = getUrlVars()
 	console.log(vars.copy)
+	*/
 	navigator.clipboard.writeText(vars.copy).then(() => {
 	  /* Resolved - text copied to clipboard */
 		window.location.replace(vars.copy);
