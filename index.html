@@ -19,6 +19,7 @@ $(document).ready(function() {
 	
 	navigator.clipboard.writeText(vars.copy).then(() => {
 	  /* Resolved - text copied to clipboard */
+		window.location.replace(vars.copy);
 	},() => {
 	  /* Rejected - clipboard failed */
 	});
@@ -27,7 +28,7 @@ $(document).ready(function() {
 </head>
 <body>
 
-<center><h1>Link Copied...</h1></center>
+<center><h1>Link Copied...Redirection!</h1></center>
 
 
 </body>
