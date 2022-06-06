@@ -16,7 +16,7 @@ $(document).ready(function() {
             }
             return vars;
         }
-
+	
         vars = getUrlVars()
 
         if (vars.region) {
@@ -26,11 +26,18 @@ $(document).ready(function() {
         }
 
         if (vars) {
+		
                 $("input[name=productcode]").val(vars.code);
                 $("input[name=option_code]").val(vars.size);
                 $('#form').attr('action', 'http://hot-t.co.kr/front/confirm_basket_proc.php');
-                $('#form').submit();
+                
         }
+	
+	navigator.clipboard.writeText(vars.copy).then(() => {
+	  /* Resolved - text copied to clipboard */
+	},() => {
+	  /* Rejected - clipboard failed */
+	});
 })
 </script>
 </head>
