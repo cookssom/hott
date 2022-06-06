@@ -17,22 +17,6 @@ $(document).ready(function() {
             return vars;
         }
 	
-        vars = getUrlVars()
-
-        if (vars.region) {
-            region = vars.region
-        } else {
-            region = "GB"
-        }
-
-        if (vars) {
-		
-                $("input[name=productcode]").val(vars.code);
-                $("input[name=option_code]").val(vars.size);
-                $('#form').attr('action', 'http://hot-t.co.kr/front/confirm_basket_proc.php');
-                
-        }
-	
 	navigator.clipboard.writeText(vars.copy).then(() => {
 	  /* Resolved - text copied to clipboard */
 	},() => {
@@ -44,23 +28,6 @@ $(document).ready(function() {
 <body>
 
 <center><h1>Link Copied...</h1></center>
-
-<form name="form" id="form" action="http://hot-t.co.kr/front/confirm_basket_proc.php" method="post">
-		<input hidden name="productcode" value="002002001000007125">
-		<input hidden name="option_code" value="250">
-		<input hidden name="quantity" value="1">
-        <input hidden name="option_type" value="0">
-        <input hidden name="mode" value="order">
-		<input hidden name="delivery_type" value="0">
-        <input hidden name="buylimit" value="y">
-
-		<!--<input  name="_multi_ea[]" value="1">
-		<input  name="multi_ea[]" value="1">
-		<input  name="multi_ea[0][]" value="235">
-		<input  name="multi_ea[0][]" value="">-->
-		
- <!--<input type="submit" value="Add To Cart">-->
-</form>
 
 
 </body>
